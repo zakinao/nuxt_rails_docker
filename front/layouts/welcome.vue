@@ -55,7 +55,7 @@
             </v-card>
           </v-col>
           <v-col col="12">
-            <div :is="`wel-${menu.title}`"></div>
+            <div :is="`wel-${menu.title}`" />
           </v-col>
         </v-row>
       </v-container>

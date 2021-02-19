@@ -14,7 +14,7 @@
               size="30"
               :color="point.color"
               v-text="point.icon"
-              />
+            />
           </v-list-item-icon>
           <v-list-item-content>
             <div

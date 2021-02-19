@@ -16,7 +16,7 @@
             :label="$t(`menus.payments.${pay.label}`)"
             :value="pay.label"
             :color="pay.color"
-            />
+          />
         </v-radio-group>
       </v-card-actions>
     </v-col>

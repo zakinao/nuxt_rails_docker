@@ -71,6 +71,7 @@ export default {
   },
 
   i18n: {
+    strategy: 'no_prefix',
     locales: ['ja', 'en'],
     defaultLocale: 'ja',
     vueI18n: {

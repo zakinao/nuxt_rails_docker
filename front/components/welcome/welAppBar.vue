@@ -32,7 +32,7 @@
       nudge-left="110"
       nudge-width="100"
     >
-      <template v-slot:activator="{ on }">
+      <template #activator="{ on }">
         <v-app-bar-nav-icon
           class="hidden-ipad-and-up"
           v-on="on"
@@ -63,6 +63,12 @@ import loginLink from '~/components/beforeLogin/loginLink'
 import signupLink from '~/components/beforeLogin/signupLink'
 import appTitle from '~/components/ui/appTitle'
 export default {
+  components: {
+    appLogo,
+    appTitle,
+    loginLink,
+    signupLink
+  },
   props: {
     menus: {
       type: Array,
@@ -72,12 +78,6 @@ export default {
       type: Number,
       default: 0
     }
-  },
-  components: {
-    appLogo,
-    appTitle,
-    loginLink,
-    signupLink
   },
   data ({ $store }) {
     return {

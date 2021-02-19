@@ -36,7 +36,7 @@
                 label="メールアドレス(必須)"
                 outlined
                 validate-on-blur
-                />
+              />
             </v-col>
           </v-row>
 
@@ -78,7 +78,7 @@
       color="primary"
     >
       お問い合わせ内容が送信されました。メールアドレスへ担当者よりご連絡いたします。
-      <template v-slot:action="{ attrs }">
+      <template #action="{ attrs }">
         <v-btn
           color="white"
           text

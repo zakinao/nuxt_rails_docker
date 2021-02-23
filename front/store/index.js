@@ -22,6 +22,9 @@ export const getters = {}
 export const mutations = {
   setLoggedIn (state, payload) {
     state.loggedIn = payload
+  },
+  getCurrentProject (state, payload) {
+    state.current.project = payload
   }
 }
 
@@ -31,5 +34,9 @@ export const actions = {
   },
   logout ({ commit }) {
     commit('setLoggedIn', false)
+  },
+  getCurrentProject ({ state, commit }, params) {
+    const currentProject = state.projects.find(project => project.id === Number(params.id))
+    commit('getCurrentProject', currentProject)
   }
 }

@@ -51,7 +51,9 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    credentials: true
+  },
 
   vuetify: {
     treeShake: true,

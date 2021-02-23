@@ -65,8 +65,8 @@ export default {
       }
       this.loading = false
     },
-    authSuccessful (response) {
-      console.log(response, 'success')
+    async authSuccessful (response) {
+      await this.$auth.login(response)
     },
     authFailure ({ response }) {
       console.log(response, 'error')

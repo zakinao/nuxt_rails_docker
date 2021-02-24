@@ -12,6 +12,7 @@ import loggedInHeader from '../components/loggedIn/loggedInHeader.vue'
 export default {
   components: {
     loggedInHeader
-  }
+  },
+  middleware: 'authenticator'
 }
 </script>

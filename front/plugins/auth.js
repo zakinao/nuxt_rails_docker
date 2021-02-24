@@ -65,8 +65,13 @@ class Authentication {
     this.removeStorage()
     this.store.dispatch('getCurrentUser', null)
   }
+
+  unauthError () {
+    this.removeStorage()
+    throw this.error({ statusCode: 401, message: 'Unauthorized' })
+  }
 }
 
-export default ({ store, $axios, $config }, inject) => {
-  inject('auth', new Authentication({ store, $axios, $config }))
+export default ({ store, $axios, $config, error }, inject) => {
+  inject('auth', new Authentication({ store, $axios, $config, error }))
 }

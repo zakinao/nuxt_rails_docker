@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  layout: 'logout',
+  layout: 'none',
   async beforeCreate () {
     await this.$auth.logout()
     this.$router.replace('/')

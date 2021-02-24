@@ -1,5 +1,6 @@
 <template>
   <bef-login-form-card #form-card-content>
+    <toaster />
     <v-form
       ref="form"
       v-model="isValid"
@@ -38,6 +39,7 @@
 
 <script>
 import befLoginFormCard from '../components/beforeLogin/befLoginFormCard.vue'
+import Toaster from '../components/ui/toaster.vue'
 import UserFormEmail from '../components/user/userFormEmail.vue'
 import UserFormPassword from '../components/user/userFormPassword.vue'
 
@@ -45,7 +47,8 @@ export default {
   components: {
     befLoginFormCard,
     UserFormEmail,
-    UserFormPassword
+    UserFormPassword,
+    Toaster
   },
   layout: 'beforeLogin',
   data () {
@@ -65,11 +68,14 @@ export default {
       }
       this.loading = false
     },
-    async authSuccessful (response) {
-      await this.$auth.login(response)
+    authSuccessful (response) {
+      this.$auth.login(response)
+      this.$router.push(this.$store.state.rememberRoute)
     },
     authFailure ({ response }) {
-      console.log(response, 'error')
+      return (response.status === 404)
+        ? this.$store.dispatch('getToast', { msg: 'ユーザーが見つかりません' })
+        : this.$my.errorHandler(response)
     }
   }
 }

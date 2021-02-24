@@ -12,6 +12,7 @@
 import beforeLoginAppBar from '~/components/beforeLogin/beforeLoginAppBar.vue'
 import BefLoginFooter from '~/components/beforeLogin/befLoginFooter.vue'
 export default {
+  middleware: 'loggedInIsRedirects',
   components: {
     beforeLoginAppBar,
     BefLoginFooter

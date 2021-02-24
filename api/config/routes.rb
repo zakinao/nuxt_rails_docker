@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :user_token, only: [:create] do
         delete :destroy, on: :collection
       end
+      resources :projects, only: [:index]
     end
   end
 end

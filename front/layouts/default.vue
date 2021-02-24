@@ -13,6 +13,6 @@ export default {
   components: {
     loggedInHeader
   },
-  middleware: 'authenticator'
+  middleware: ['authenticator', 'getProjects']
 }
 </script>
